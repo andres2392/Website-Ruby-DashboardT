@@ -21,20 +21,23 @@
   <body id="page-top">
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+        
+        <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path)  %>
         <!-- Sidebar -->
-        <%= render 'shared/sidebar' %>
+          <%= render 'shared/sidebar' %>
         <!-- End of Sidebar -->
+        <% end %>
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
-                <!-- Topbar -->
-                <%= render 'shared/navbar' %>
-                <!-- End of Topbar -->
-
+                <% unless current_page?(new_user_session_path) || current_page?(new_user_registration_path)  %>
+                  <!-- Topbar -->
+                  <%= render 'shared/navbar' %>
+                  <!-- End of Topbar -->
+                <% end %>
                 <!-- Begin Page Content -->
                 <p class="notice"><%= notice %></p>
                 <p class="alert"><%= alert %></p>
@@ -47,7 +50,7 @@
             <%= render 'shared/footer' %>
             <!-- End of Footer -->
         </div>
-        <!-- End of Content Wrapper -->
+        <!-- End of Content Wrap per -->
     </div>
     <!-- End of Page Wrapper -->
 
